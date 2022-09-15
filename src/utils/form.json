@@ -1,0 +1,48 @@
+{
+  "heading": "Registration Form",
+  "fields": [
+    {
+      "id": "name",
+      "label": "Name",
+      "placeholder": "Enter your full name",
+      "type": "text",
+      "value": ""
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "placeholder": "Enter your email",
+      "type": "text"
+    },
+
+    {
+      "id": "address",
+      "label": "Address",
+      "placeholder": "Kathmandu",
+      "type": "checkbox"
+    },
+    {
+      "id": "phone",
+      "label": "Phone Number",
+      "placeholder": "9899339939",
+      "type": "text"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "value": "Male",
+      "type": "select",
+      "options": [
+        {
+          "group": "Male"
+        },
+        {
+          "group": "Female"
+        },
+        {
+          "group": "Others"
+        }
+      ]
+    }
+  ]
+}
