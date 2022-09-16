@@ -2,19 +2,22 @@ import React from "react";
 import Input from "./fields/Input";
 import Select from "./fields/Select";
 
-const Field = ({ fields }) => {
-  const { type, id, label, placeholder, value, options } = fields;
+const Field = ({ fields, handleChange, values, errors }) => {
+  const { type, id, label, placeholder, options } = fields;
 
   const renderComponent = () => {
     switch (type) {
       case "text":
+      case "password":
         return (
           <Input
+            errors={errors}
             type={type}
             placeholder={placeholder}
             id={id}
             label={label}
-            value={value}
+            value={values["id"]}
+            handleChange={handleChange}
           />
         );
 
@@ -24,7 +27,9 @@ const Field = ({ fields }) => {
             id={id}
             label={label}
             options={options}
+            value={values["id"]}
             placeholder={placeholder}
+            handleChange={handleChange}
           />
         );
 
