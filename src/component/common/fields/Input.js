@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ErrorMessage from "./ErrorMessage";
 
 const Input = ({
@@ -8,8 +8,14 @@ const Input = ({
   type,
   label,
   handleChange,
-  errors,
+  required,
+  errorMessage,
+  pattern,
+  fields,
 }) => {
+  const [focused, setFocused] = useState(false);
+
+  const inputRequired = required === "true" ? true : false;
   return (
     <div className="input-field">
       <label className="label" htmlFor={id}>
@@ -22,8 +28,12 @@ const Input = ({
         value={value}
         type={type}
         id={id}
+        required={inputRequired}
+        onBlur={() => setFocused(true)}
+        focused={focused.toString()}
+        pattern={pattern}
       />
-      {errors[id]?.length > 0 && <ErrorMessage message={errors[id]} />}
+      <ErrorMessage message={errorMessage} />
     </div>
   );
 };
