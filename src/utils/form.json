@@ -11,15 +11,21 @@
     {
       "id": "email",
       "label": "Email",
-      "placeholder": "Enter your email",
+      "placeholder": "john@example.com",
       "type": "text"
+    },
+    {
+      "id": "password",
+      "label": "Password",
+      "placeholder": "Enter password",
+      "type": "password"
     },
 
     {
       "id": "address",
       "label": "Address",
       "placeholder": "Kathmandu",
-      "type": "checkbox"
+      "type": "text"
     },
     {
       "id": "phone",
@@ -33,6 +39,9 @@
       "value": "Male",
       "type": "select",
       "options": [
+        {
+          "group": "Select your gender"
+        },
         {
           "group": "Male"
         },

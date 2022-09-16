@@ -16,6 +16,13 @@
   margin-left: 12px;
 }
 
+.error-message {
+  font-size: 12px;
+
+  display: block;
+  color: red;
+}
+
 select {
   margin-bottom: 20px;
 }
