@@ -6,31 +6,43 @@
       "label": "Name",
       "placeholder": "Enter your full name",
       "type": "text",
+      "required": "true",
+      "errorMessage": "Please enter your name",
       "value": ""
     },
     {
       "id": "email",
       "label": "Email",
       "placeholder": "john@example.com",
-      "type": "text"
+      "required": "true",
+      "type": "text",
+      "errorMessage": "Email must be valid!",
+      "pattern": "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$"
     },
     {
       "id": "password",
       "label": "Password",
       "placeholder": "Enter password",
-      "type": "password"
+      "type": "password",
+      "required": "true",
+      "errorMessage": "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
+      "pattern": "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"
     },
 
     {
       "id": "address",
       "label": "Address",
       "placeholder": "Kathmandu",
+      "required": "true",
+      "errorMessage": "Please enter your address",
       "type": "text"
     },
     {
       "id": "phone",
       "label": "Phone Number",
       "placeholder": "9899339939",
+      "required": "true",
+      "errorMessage": "Please enter your phone number",
       "type": "text"
     },
     {

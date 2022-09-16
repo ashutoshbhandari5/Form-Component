@@ -18,8 +18,7 @@
 
 .error-message {
   font-size: 12px;
-
-  display: block;
+  display: none;
   color: red;
 }
 
@@ -32,4 +31,8 @@ select {
 }
 .registration-form {
   background-color: #ffffff;
+}
+
+input:invalid[focused="true"] ~ .error-message {
+  display: block;
 }
