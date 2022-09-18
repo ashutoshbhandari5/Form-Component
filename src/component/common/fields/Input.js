@@ -8,14 +8,12 @@ const Input = ({
   type,
   label,
   handleChange,
-  required,
   errorMessage,
-  pattern,
-  fields,
+  validations,
+  error,
 }) => {
   const [focused, setFocused] = useState(false);
 
-  const inputRequired = required === "true" ? true : false;
   return (
     <div className="input-field">
       <label className="label" htmlFor={id}>
@@ -23,17 +21,15 @@ const Input = ({
       </label>
       <input
         className="input"
-        onChange={(e) => handleChange(e.target.value, id)}
+        onChange={(e) => handleChange(e.target.value, id, validations)}
         placeholder={placeholder}
         value={value}
         type={type}
         id={id}
-        required={inputRequired}
         onBlur={() => setFocused(true)}
         focused={focused.toString()}
-        pattern={pattern}
       />
-      <ErrorMessage message={errorMessage} />
+      {error[id] && <ErrorMessage message={errorMessage} />}
     </div>
   );
 };
