@@ -11,12 +11,8 @@ const useForm = () => {
       [name]: value,
     });
 
-    console.log(validations);
-
     if (validations.length > 0) {
-      console.log(validations);
       const results = validations.map((el) => validate(el, value));
-      console.log(results);
       const isCorrectValue = results.find((el) => el === false);
 
       if (isCorrectValue === undefined) {

@@ -66,8 +66,6 @@ export const validate = (validator, value) => {
     return rules[rule](value, extra);
   } else {
     rule = validator;
-    console.log(rules[rule](value));
-    console.log(rules["isString"]("1"));
     return rules[rule](value);
   }
 };
