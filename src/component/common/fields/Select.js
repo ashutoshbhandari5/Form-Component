@@ -8,7 +8,7 @@ const Select = ({ label, id, options, handleChange }) => {
       </label>
       <select id={id} onChange={(e) => handleChange(e.target.value, id)}>
         {options.map((option, i) => (
-          <option value={option.group} key={i}>
+          <option disabled={option.disabled} value={option.group} key={i}>
             {option.group}
           </option>
         ))}

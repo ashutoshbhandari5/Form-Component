@@ -7,7 +7,8 @@
       "placeholder": "Enter your full name",
       "type": "text",
       "required": "true",
-      "errorMessage": "Please enter your name",
+      "errorMessage": "Name must incldue minimun of 1 character",
+      "validations": [{ "minNumber": 1 }, "required"],
       "value": ""
     },
     {
@@ -17,7 +18,11 @@
       "required": "true",
       "type": "text",
       "errorMessage": "Email must be valid!",
-      "pattern": "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$"
+      "validations": [
+        { "isEmail": "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" },
+        { "endsWith": ".com" },
+        "required"
+      ]
     },
     {
       "id": "password",
@@ -26,7 +31,12 @@
       "type": "password",
       "required": "true",
       "errorMessage": "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
-      "pattern": "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"
+      "validations": [
+        {
+          "isPassword": "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"
+        },
+        "required"
+      ]
     },
 
     {
@@ -35,6 +45,7 @@
       "placeholder": "Kathmandu",
       "required": "true",
       "errorMessage": "Please enter your address",
+      "validations": ["required", "isString"],
       "type": "text"
     },
     {
@@ -42,7 +53,12 @@
       "label": "Phone Number",
       "placeholder": "9899339939",
       "required": "true",
-      "errorMessage": "Please enter your phone number",
+      "errorMessage": "Please enter your valid moblie number",
+      "validations": [
+        { "startsWith": "9" },
+        "required",
+        { "hasStringLength": 10 }
+      ],
       "type": "text"
     },
     {
@@ -52,7 +68,8 @@
       "type": "select",
       "options": [
         {
-          "group": "Select your gender"
+          "group": "Select your gender",
+          "disabled": true
         },
         {
           "group": "Male"
@@ -63,7 +80,8 @@
         {
           "group": "Others"
         }
-      ]
+      ],
+      "validations": ["required"]
     }
   ]
 }

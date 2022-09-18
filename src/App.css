@@ -5,7 +5,7 @@
 .form-component {
   background-color: #ffffff;
   width: 400px;
-  height: 50vh;
+  padding: 20px 0;
 }
 
 .input-field {
@@ -18,7 +18,7 @@
 
 .error-message {
   font-size: 12px;
-  display: none;
+  display: block;
   color: red;
 }
 
@@ -31,8 +31,4 @@ select {
 }
 .registration-form {
   background-color: #ffffff;
-}
-
-input:invalid[focused="true"] ~ .error-message {
-  display: block;
 }

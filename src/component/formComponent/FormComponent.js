@@ -5,7 +5,7 @@ import useForm from "../../hooks/useForm";
 
 const FormComponent = () => {
   const [formElements, setFormElements] = useState({});
-  const { values, handleChange, errors } = useForm();
+  const { values, handleChange, error } = useForm();
 
   useEffect(() => {
     setFormElements(formSchema);
@@ -24,10 +24,10 @@ const FormComponent = () => {
           ? "Form field does not exist"
           : formElements.fields.map((item, i) => (
               <Field
-                errors={errors}
                 values={values}
                 handleChange={handleChange}
                 key={i}
+                error={error}
                 fields={item}
               />
             ))}
