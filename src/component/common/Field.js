@@ -2,7 +2,7 @@ import React from "react";
 import Input from "./fields/Input";
 import Select from "./fields/Select";
 
-const Field = ({ fields, handleChange, values, error }) => {
+const Field = ({ fields, handleChange, value, error }) => {
   const {
     type,
     id,
@@ -28,7 +28,7 @@ const Field = ({ fields, handleChange, values, error }) => {
             required={required}
             errorMessage={errorMessage}
             pattern={pattern}
-            value={values["id"]}
+            value={value}
             validations={validations}
             handleChange={handleChange}
             error={error}
@@ -41,7 +41,7 @@ const Field = ({ fields, handleChange, values, error }) => {
             id={id}
             label={label}
             options={options}
-            value={values["id"]}
+            value={value}
             placeholder={placeholder}
             handleChange={handleChange}
           />

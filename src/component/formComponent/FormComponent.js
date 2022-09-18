@@ -24,7 +24,7 @@ const FormComponent = () => {
           ? "Form field does not exist"
           : formElements.fields.map((item, i) => (
               <Field
-                values={values}
+                values={values[item.id]}
                 handleChange={handleChange}
                 key={i}
                 error={error}
