@@ -1,3 +1,5 @@
+@import "./component/barGraph/Bargraph.css";
+
 .App {
   text-align: center;
 }
